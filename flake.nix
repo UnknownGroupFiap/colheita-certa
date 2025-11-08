@@ -20,7 +20,26 @@
             nodejs_20
             nodePackages.pnpm
             git
+            zip
           ];
+          
+          shellHook = ''
+            echo "Colheita Certa - Ambiente de Desenvolvimento"
+            echo ""
+            echo "Comandos disponíveis:"
+            echo "  pnpm dev       - Iniciar servidor de desenvolvimento"
+            echo "  pnpm build     - Build para produção"
+            echo "  make-zip       - Gerar ZIP com index.html, src/ e public/"
+            echo ""
+            
+            make-zip() {
+              echo "Gerando ZIP do projeto..."
+              zip -r colheita-certa.zip index.html src/ public/ -x "*.git*" "node_modules/*" "dist/*"
+              echo "ZIP gerado: colheita-certa.zip"
+            }
+            
+            export -f make-zip
+          '';
         };
       }
     );

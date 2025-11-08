@@ -1,147 +1,276 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colheita Certa - Soluções</title>
+    <meta name="description" content="Descubra as soluções do Colheita Certa para pequenos produtores rurais. Tecnologia acessível para aumentar sua renda e reduzir perdas." />
+    <title>Soluções - Colheita Certa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/src/styles/reset.css" />
+    <link rel="stylesheet" href="/src/styles/common.css" />
+    <link rel="stylesheet" href="/src/styles/solucoes.css" />
 </head>
 <body>
-    <main>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    
+    <header class="header">
+      <nav class="nav-container" aria-label="Navegação principal">
+        <div class="nav-wrapper">
+          <a href="/" class="logo-button" aria-label="Voltar para a página inicial">
+            <img src="/logo.svg" alt="Logo Colheita Certa" class="logo-image" />
+            <span class="logo-text">Colheita Certa</span>
+          </a>
 
-        <section class="subpage-banner">
-            <h2>Por que escolher o Colheita Certa?</h2>
-            <p>Criamos uma solução para os desafios reais enfrentados diariamente por pequenos produtores brasileiros.</p>
+          <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+          <label for="menu-toggle" class="mobile-menu-btn" aria-label="Abrir menu">
+            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </label>
+
+          <ul class="nav-menu" role="menubar">
+            <li role="none">
+              <a href="/" class="nav-link" role="menuitem">Início</a>
+            </li>
+            <li role="none">
+              <a href="/src/pages/solucoes.html" class="nav-link active" role="menuitem" aria-current="page">Soluções</a>
+            </li>
+            <li role="none">
+              <a href="/src/pages/recursos.html" class="nav-link" role="menuitem">Recursos</a>
+            </li>
+            <li role="none">
+              <a href="/src/pages/publico.html" class="nav-link" role="menuitem">Público</a>
+            </li>
+            <li role="none">
+              <a href="/src/pages/contato.html" class="nav-link" role="menuitem">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <section class="hero-banner">
+            <div class="container">
+                <h1>Por que escolher o Colheita Certa?</h1>
+                <p>Criamos uma solução para os desafios reais enfrentados diariamente por pequenos produtores brasileiros.</p>
+            </div>
         </section>
         
         <section class="desafios">
-            <div>
-                <h2>Os Desafios que Resolvemos</h2>
-                <p>Milhares de pequenos produtores enfrentam obstáculos que limitam seu potencial. Nós ajudamos a superá-los.</p>
-                <ul class="desafios-lista">
-                    <li class="desafio-card">
-                        <h3>
-                            <img src="" alt="" class="card-icon">
-                            Preços Baixos
-                        </h3>
-                        <p>Dependência de atravessadores que reduzem drasticamente a margem de lucro do produtor</p>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Os Desafios que Resolvemos</h2>
+                    <p class="section-subtitle">Milhares de pequenos produtores enfrentam obstáculos que limitam seu potencial. Nós ajudamos a superá-los.</p>
+                </div>
+                
+                <div class="desafios-grid">
+                    <div class="desafio-card">
+                        <div class="desafio-header">
+                            <div class="desafio-icon">
+                                <i class="bi bi-cash-coin"></i>
+                            </div>
+                            <h3>Preços Baixos</h3>
+                        </div>
+                        <p class="desafio-texto">Dependência de atravessadores que reduzem drasticamente a margem de lucro do produtor</p>
 
                         <div class="solucao-box">
-                            <p>
-                                <img src="" alt="">
-                                <strong>Com Colheita Certa:</strong> Venda direto e aumente sua margem em até 40%
-                            </p>
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <p><strong>Com Colheita Certa:</strong> Venda direto e aumente sua margem em até 40%</p>
                         </div>
-                    </li>
+                    </div>
                     
-                    <li class="desafio-card">
-                        <h3>
-                            <img src="" alt="" class="card-icon">
-                            Perdas na Colheita
-                        </h3>
-                        <p>Falta de orientação técnica leva a perdas de até 30% da produção por colheita inadequada, pragas ou clima.</p>
+                    <div class="desafio-card">
+                        <div class="desafio-header">
+                            <div class="desafio-icon">
+                                <i class="bi bi-exclamation-triangle"></i>
+                            </div>
+                            <h3>Perdas na Colheita</h3>
+                        </div>
+                        <p class="desafio-texto">Falta de orientação técnica leva a perdas de até 30% da produção por colheita inadequada, pragas ou clima.</p>
                         
                         <div class="solucao-box">
-                            <p>
-                                <img src="/icons/check-verde.svg" alt="">
-                                <strong>Com Colheita Certa:</strong> Alertas e calendários reduzem perdas significativamente
-                            </p>
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <p><strong>Com Colheita Certa:</strong> Alertas e calendários reduzem perdas significativamente</p>
                         </div>
-                    </li>
+                    </div>
 
-                    <li class="desafio-card">
-                        <h3>
-                            <img src="" alt="" class="card-icon">
-                            Acesso Limitado
-                        </h3>
-                        <p>Dificuldade de chegar a mercados maiores, feiras e programas governamentais de compra.</p>
+                    <div class="desafio-card">
+                        <div class="desafio-header">
+                            <div class="desafio-icon">
+                                <i class="bi bi-door-closed"></i>
+                            </div>
+                            <h3>Acesso Limitado</h3>
+                        </div>
+                        <p class="desafio-texto">Dificuldade de chegar a mercados maiores, feiras e programas governamentais de compra.</p>
                         
                         <div class="solucao-box">
-                            <p>
-                                <img src="/icons/check-verde.svg" alt="">
-                                <strong>Com Colheita Certa:</strong> Conexão direta com compradores e programas públicos
-                            </p>
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <p><strong>Com Colheita Certa:</strong> Conexão direta com compradores e programas públicos</p>
                         </div>
-                    </li>
+                    </div>
 
-                    <li class="desafio-card">
-                        <h3>
-                            <img src="" alt="" class="card-icon">
-                            Falta de Controle
-                        </h3>
-                        <p>Sem gestão adequada, produtores não sabem exatamente seus custos, lucros ou onde melhorar.</p>
+                    <div class="desafio-card">
+                        <div class="desafio-header">
+                            <div class="desafio-icon">
+                                <i class="bi bi-clipboard-x"></i>
+                            </div>
+                            <h3>Falta de Controle</h3>
+                        </div>
+                        <p class="desafio-texto">Sem gestão adequada, produtores não sabem exatamente seus custos, lucros ou onde melhorar.</p>
                         
                         <div class="solucao-box">
-                            <p>
-                                <img src="/icons/check-verde.svg" alt="">
-                                <strong>Com Colheita Certa:</strong>  Gestão completa e relatórios automáticos
-                            </p>
+                            <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            <p><strong>Com Colheita Certa:</strong> Gestão completa e relatórios automáticos</p>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="importancia-agricultura">
-            <div>
-                <h2>A Importância da Agricultura Familiar</h2>
-                <p>A agricultura familiar é responsável por grande parte dos alimentos que chegam à mesa dos brasileiros. São milhões de famílias que sustentam a economia de pequenos municípios.</p>
-                <ul>
-                    <li>
-                        <span class="stat-badge">84%</span>
-                        dos estabelecimentos rurais brasileiros são de agricultura familiar
-                    </li>
-                    <li>
-                        <span class="stat-badge">70%</span>
-                        do feijão consumido no Brasil vem desses produtores
-                    </li>
-                    <li>
-                        <span class="stat-badge">90%</span>
-                        dos municípios com até 20 mil habitantes dependem da agricultura familiar
-                    </li>
-                </ul>
-            </div>
-            
-            <div>
-                <img src="/src/assets/images/solucoes-importancia.jpg" alt="">
+            <div class="container">
+                <div class="importancia-grid">
+                    <div class="importancia-content">
+                        <h2 class="section-title">A Importância da Agricultura Familiar</h2>
+                        <p class="importancia-text">A agricultura familiar é responsável por grande parte dos alimentos que chegam à mesa dos brasileiros. São milhões de famílias que sustentam a economia de pequenos municípios.</p>
+                        <ul class="stats-list">
+                            <li class="stat-item-inline">
+                                <span class="stat-badge">84%</span>
+                                <span>dos estabelecimentos rurais brasileiros são de agricultura familiar</span>
+                            </li>
+                            <li class="stat-item-inline">
+                                <span class="stat-badge">70%</span>
+                                <span>do feijão consumido no Brasil vem desses produtores</span>
+                            </li>
+                            <li class="stat-item-inline">
+                                <span class="stat-badge">90%</span>
+                                <span>dos municípios com até 20 mil habitantes dependem da agricultura familiar</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="importancia-image">
+                        <img src="/solucoes-importancia.jpg" alt="Agricultura familiar">
+                    </div>
+                </div>
             </div>
         </section>
 
 
         <section class="missao">
-            <h2>Nossa Missão</h2>
-            <p>Empoderar pequenos produtores com tecnologia acessível, para que possam prosperar, aumentar sua renda e contribuir para um sistema agroalimentar mais justo e sustentável.</p>
-            <ul>
-                <li class="pilar-card">
-                    <img src="" alt="">
-                    <h3>Foco no Produtor</h3>
-                    <p>Cada funcionalidade pensada para resolver problemas reais do dia a dia.</p>
-                </li>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Nossa Missão</h2>
+                    <p class="section-subtitle">Empoderar pequenos produtores com tecnologia acessível, para que possam prosperar, aumentar sua renda e contribuir para um sistema agroalimentar mais justo e sustentável.</p>
+                </div>
                 
-                <li class="pilar-card">
-                    <img src="" alt="">
-                    <h3>Tecnologia Simples</h3>
-                    <p>Fácil de usar, funciona offline e não exige expertise técnica.</p>
-                </li>
-                
-                <li class="pilar-card">
-                    <img src="" alt="">
-                    <h3>Impacto Social</h3>
-                    <p>Contribuindo para segurança alimentar e desenvolvimento rural.</p>
-                </li>
-            </ul>
+                <div class="pilares-grid">
+                    <div class="pilar-card">
+                        <div class="pilar-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h3>Foco no Produtor</h3>
+                        <p>Cada funcionalidade pensada para resolver problemas reais do dia a dia.</p>
+                    </div>
+                    
+                    <div class="pilar-card">
+                        <div class="pilar-icon">
+                            <i class="bi bi-phone"></i>
+                        </div>
+                        <h3>Tecnologia Simples</h3>
+                        <p>Fácil de usar, funciona offline e não exige expertise técnica.</p>
+                    </div>
+                    
+                    <div class="pilar-card">
+                        <div class="pilar-icon">
+                            <i class="bi bi-heart"></i>
+                        </div>
+                        <h3>Impacto Social</h3>
+                        <p>Contribuindo para segurança alimentar e desenvolvimento rural.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="alinhamento-ods">
-            <div class="info-ods">
-                <h2>
-                    <img src="" alt="">
-                    Alinhamento com ODS 2
-                </h2>
-                <p>O Colheita Certa está alinhado ao Objetivo de Desenvolvimento Sustentável 2 da ONU (Fome Zero e Agricultura Sustentável), especialmente à Meta 2.3, que busca dobrar a produtividade e renda de pequenos produtores até 2030.</p>
-                
-                <p>Nossa plataforma contribui diretamente para essa meta ao oferecer ferramentas práticas que aumentam a produtividade, reduzem perdas e ampliam o acesso a mercados.</p>                
-            </div> 
+            <div class="container">
+                <div class="ods-content">
+                    <div class="ods-header">
+                        <div class="ods-icon">
+                            <i class="bi bi-globe-americas"></i>
+                        </div>
+                        <h2>Alinhamento com ODS 2</h2>
+                    </div>
+                    <p class="ods-text">O Colheita Certa está alinhado ao <strong>Objetivo de Desenvolvimento Sustentável 2 da ONU</strong> (Fome Zero e Agricultura Sustentável), especialmente à <strong>Meta 2.3</strong>, que busca dobrar a produtividade e renda de pequenos produtores até 2030.</p>
+                    
+                    <p class="ods-text">Nossa plataforma contribui diretamente para essa meta ao oferecer ferramentas práticas que aumentam a produtividade, reduzem perdas e ampliam o acesso a mercados.</p>                
+                </div> 
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">Pronto para Transformar sua Produção?</h2>
+                <p class="cta-subtitle">
+                    Junte-se a milhares de produtores que já estão aumentando sua renda com o Colheita Certa
+                </p>
+                <div class="button-group">
+                    <a href="/src/pages/contato.html" class="btn btn-light">Criar Conta Grátis</a>
+                    <a href="/src/pages/contato.html" class="btn btn-outline">Falar com Especialista</a>
+                </div>
+            </div>
         </section>
     </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="footer-container">
+        <section class="footer-section" aria-labelledby="footer-about">
+          <div class="footer-logo">
+            <img src="/noBgWhite.png" alt="Logo Colheita Certa" class="footer-logo-image" />
+            <span>Colheita Certa</span>
+          </div>
+          <p class="footer-description">
+            A plataforma completa que ajuda pequenos produtores a aumentar sua renda e reduzir perdas através da tecnologia.
+          </p>
+        </section>
+        
+        <nav class="footer-section" aria-labelledby="footer-links">
+          <h3 id="footer-links">Links Rápidos</h3>
+          <ul class="footer-links">
+            <li><a href="/" class="footer-link">Início</a></li>
+            <li><a href="/src/pages/solucoes.html" class="footer-link">Soluções</a></li>
+            <li><a href="/src/pages/recursos.html" class="footer-link">Recursos</a></li>
+            <li><a href="/src/pages/publico.html" class="footer-link">Público</a></li>
+            <li><a href="/src/pages/contato.html" class="footer-link">Contato</a></li>
+          </ul>
+        </nav>
+        
+        <section class="footer-section" aria-labelledby="footer-info">
+          <h3 id="footer-info">Sobre</h3>
+          <p class="footer-info-text">Desenvolvido pela equipe RAP como parte do projeto Agrotech.</p>
+          <p class="footer-info-text">Alinhado aos objetivos de desenvolvimento sustentável da ONU.</p>
+        </section>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Colheita Certa. Tecnologia para transformar a agricultura familiar</p>
+      </div>
+    </footer>
 </body>
 </html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com o Colheita Certa. Nossa equipe está pronta para ajudar você." />
+    <title>Contato - Colheita Certa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/src/styles/reset.css" />
+    <link rel="stylesheet" href="/src/styles/common.css" />
+    <link rel="stylesheet" href="/src/styles/contato.css" />
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    
+    <header class="header">
+      <nav class="nav-container" aria-label="Navegação principal">
+        <div class="nav-wrapper">
+          <a href="/" class="logo-button" aria-label="Voltar para a página inicial">
+            <img src="/logo.svg" alt="Logo Colheita Certa" class="logo-image" />
+            <span class="logo-text">Colheita Certa</span>
+          </a>
+
+          <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+          <label for="menu-toggle" class="mobile-menu-btn" aria-label="Abrir menu">
+            <svg class="menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+            <svg class="close-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </label>
+
+          <ul class="nav-menu" role="menubar">
+            <li role="none">
+              <a href="/" class="nav-link" role="menuitem">Início</a>
+            </li>
+            <li role="none">
+              <a href="/src/pages/solucoes.html" class="nav-link" role="menuitem">Soluções</a>
+            </li>
+            <li role="none">
+              <a href="/src/pages/recursos.html" class="nav-link" role="menuitem">Recursos</a>
+            </li>
+            <li role="none">
+              <a href="/src/pages/publico.html" class="nav-link" role="menuitem">Público</a>
+            </li>
+            <li role="none">
+              <a href="/src/pages/contato.html" class="nav-link active" role="menuitem" aria-current="page">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <section class="hero-banner">
+            <div class="container">
+                <h1>Fale com a Gente</h1>
+                <p>Tem dúvidas? Quer saber mais? Mande uma mensagem para nossa equipe. Estamos aqui para ajudar você!</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2 class="section-title">Informações de Contato</h2>
+                        <p class="contact-intro">Nossa equipe está pronta para ajudar você. Entre em contato através dos canais abaixo ou preencha o formulário ao lado.</p>
+
+                        <div class="info-cards">
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <i class="bi bi-envelope"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>Email</h3>
+                                    <p>contato@colheitacerta.com.br</p>
+                                    <p>suporte@colheitacerta.com.br</p>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <i class="bi bi-telephone"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>Telefone</h3>
+                                    <p>(11) 3000-0000</p>
+                                    <p>WhatsApp: (11) 99999-9999</p>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>Localização</h3>
+                                    <p>São Paulo, SP</p>
+                                    <p>Brasil</p>
+                                </div>
+                            </div>
+
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <i class="bi bi-clock"></i>
+                                </div>
+                                <div class="info-content">
+                                    <h3>Horário de Atendimento</h3>
+                                    <p>Segunda a Sexta: 8h às 18h</p>
+                                    <p>Sábado: 8h às 12h</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-wrapper">
+                        <h2 class="section-title">Envie sua Mensagem</h2>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Nome Completo *</label>
+                                <input type="text" id="name" name="name" required placeholder="Seu nome completo">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Telefone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Assunto *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Selecione um assunto</option>
+                                    <option value="duvidas">Dúvidas sobre a plataforma</option>
+                                    <option value="suporte">Suporte técnico</option>
+                                    <option value="parceria">Proposta de parceria</option>
+                                    <option value="feedback">Feedback ou sugestão</option>
+                                    <option value="outro">Outro assunto</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Mensagem *</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-submit">
+                                <i class="bi bi-send"></i>
+                                Enviar Mensagem
+                            </button>
+
+                            <div class="form-success" id="successMessage" style="display: none;">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <p>Mensagem enviada com sucesso! Entraremos em contato em breve.</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Perguntas Frequentes</h2>
+                    <p class="section-subtitle">Encontre respostas rápidas para as dúvidas mais comuns</p>
+                </div>
+
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Como faço para criar uma conta?</h3>
+                        <p>Você pode criar sua conta gratuitamente acessando nossa plataforma e clicando em "Cadastre-se". O processo é simples e leva apenas alguns minutos.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>A plataforma é gratuita?</h3>
+                        <p>Sim! O Colheita Certa oferece um plano gratuito com funcionalidades essenciais para pequenos produtores. Também temos planos premium com recursos avançados.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Como funciona o marketplace?</h3>
+                        <p>No marketplace, você pode publicar seus produtos e conectar-se diretamente com compradores, eliminando intermediários e aumentando sua margem de lucro.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Preciso de internet para usar?</h3>
+                        <p>Algumas funcionalidades funcionam offline, mas para acessar o marketplace e receber alertas em tempo real, você precisará de conexão com a internet.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Vocês oferecem treinamento?</h3>
+                        <p>Sim! Oferecemos vídeos tutoriais, guias passo a passo e suporte técnico para ajudar você a aproveitar ao máximo a plataforma.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Como posso vender para programas governamentais?</h3>
+                        <p>A plataforma possui integração com programas como PAA e PNAE, facilitando o processo de cadastro e venda para compras públicas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="footer-container">
+        <section class="footer-section" aria-labelledby="footer-about">
+          <div class="footer-logo">
+            <img src="/noBgWhite.png" alt="Logo Colheita Certa" class="footer-logo-image" />
+            <span>Colheita Certa</span>
+          </div>
+          <p class="footer-description">
+            A plataforma completa que ajuda pequenos produtores a aumentar sua renda e reduzir perdas através da tecnologia.
+          </p>
+        </section>
+        
+        <nav class="footer-section" aria-labelledby="footer-links">
+          <h3 id="footer-links">Links Rápidos</h3>
+          <ul class="footer-links">
+            <li><a href="/" class="footer-link">Início</a></li>
+            <li><a href="/src/pages/solucoes.html" class="footer-link">Soluções</a></li>
+            <li><a href="/src/pages/recursos.html" class="footer-link">Recursos</a></li>
+            <li><a href="/src/pages/publico.html" class="footer-link">Público</a></li>
+            <li><a href="/src/pages/contato.html" class="footer-link">Contato</a></li>
+          </ul>
+        </nav>
+        
+        <section class="footer-section" aria-labelledby="footer-info">
+          <h3 id="footer-info">Sobre</h3>
+          <p class="footer-info-text">Desenvolvido pela equipe RAP como parte do projeto Agrotech.</p>
+          <p class="footer-info-text">Alinhado aos objetivos de desenvolvimento sustentável da ONU.</p>
+        </section>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Colheita Certa. Tecnologia para transformar a agricultura familiar</p>
+      </div>
+    </footer>
+
+    <script>
+      // Formulário de contato - simulação de envio
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const successMessage = document.getElementById('successMessage');
+        successMessage.style.display = 'flex';
+        
+        // Reset form
+        setTimeout(() => {
+          this.reset();
+          setTimeout(() => {
+            successMessage.style.display = 'none';
+          }, 3000);
+        }, 100);
+      });
+    </script>
+</body>
+</html>
