@@ -9,7 +9,7 @@
   position: absolute;
   inset: 0;
   opacity: 0.15;
-  background-image: url('/home-banner.jpg');
+  background-image: url('../../public/home-banner.jpg');
   background-size: cover;
   background-position: center;
 }
