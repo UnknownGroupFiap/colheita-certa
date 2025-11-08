@@ -1,206 +1,336 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="../../logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colheita Certa - Recursos</title>
+    <meta name="description" content="Conheça todos os recursos do Colheita Certa para gerenciar sua produção rural de forma inteligente." />
+    <title>Recursos - Colheita Certa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/common.css" />
+    <link rel="stylesheet" href="../styles/recursos.css" />
 </head>
 <body>
-    <main>
-        <section class="subpage-banner">
-            <h2>Recursos</h2>
-            <p>Criamos uma solução para os desafios reais enfrentados diariamente por pequenos produtores brasileiros.</p>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    
+    <header class="header">
+      <nav class="nav-container" aria-label="Navegação principal">
+        <div class="nav-wrapper">
+          <a href="../../index.html" class="logo-button" aria-label="Voltar para a página inicial">
+            <img src="../../logo.svg" alt="Logo Colheita Certa" class="logo-image" />
+            <span class="logo-text">Colheita Certa</span>
+          </a>
+
+          <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+          <label for="menu-toggle" class="mobile-menu-btn" aria-label="Abrir menu">
+            <i class="bi bi-list menu-icon" aria-hidden="true"></i>
+            <i class="bi bi-x close-icon" aria-hidden="true"></i>
+          </label>
+
+          <ul class="nav-menu" role="menubar">
+            <li role="none">
+              <a href="../../index.html" class="nav-link" role="menuitem">Início</a>
+            </li>
+            <li role="none">
+              <a href="./solucoes.html" class="nav-link" role="menuitem">Soluções</a>
+            </li>
+            <li role="none">
+              <a href="./recursos.html" class="nav-link active" role="menuitem" aria-current="page">Recursos</a>
+            </li>
+            <li role="none">
+              <a href="./contato.html" class="nav-link" role="menuitem">Contato</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content" role="main">
+        <section class="hero-banner">
+            <div class="container">
+                <h1>Recursos</h1>
+                <p>Tudo que você precisa para gerenciar sua produção e vender melhor, em uma única plataforma integrada.</p>
+            </div>
         </section>
 
         <section class="gestao-rural">
-            <div>
-                <h2>Sua Central de Gestão Rural</h2>
-                <p>Colheita Certa reúne todas as ferramentas que você precisa para produzir melhor e vender mais, tudo em um só lugar.</p>
-                <ul>
-                    <li class="recurso-item">
-                        <img src="" alt="">
-                        <div classs="funcionalidade-texto">
-                            <h3>Decisões Inteligentes</h3>
-                            <p>Alertas e recomendações no momento certo para maximizar resultados.</p>
-                        </div>
-                    </li>
+            <div class="container">
+                <div class="gestao-grid">
+                    <div class="gestao-content">
+                        <h2 class="section-title">Sua Central de Gestão Rural</h2>
+                        <p class="gestao-intro">Colheita Certa reúne todas as ferramentas que você precisa para produzir melhor e vender mais, tudo em um só lugar.</p>
+                        
+                        <ul class="gestao-list">
+                            <li class="gestao-item">
+                                <div class="gestao-icon">
+                                    <i class="bi bi-bell"></i>
+                                </div>
+                                <div class="gestao-texto">
+                                    <h3>Decisões Inteligentes</h3>
+                                    <p>Alertas e recomendações no momento certo para maximizar resultados.</p>
+                                </div>
+                            </li>
+                            
+                            <li class="gestao-item">
+                                <div class="gestao-icon">
+                                    <i class="bi bi-cart3"></i>
+                                </div>
+                                <div class="gestao-texto">
+                                    <h3>Venda Direto</h3>
+                                    <p>Elimine atravessadores e conecte-se com quem compra.</p>
+                                </div>
+                            </li>
+                            
+                            <li class="gestao-item">
+                                <div class="gestao-icon">
+                                    <i class="bi bi-bar-chart"></i>
+                                </div>
+                                <div class="gestao-texto">
+                                    <h3>Gestão Completa</h3>
+                                    <p>Acompanhe custos, lucros e saiba onde melhorar.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                     
-                    <li class="recurso-item">
-                        <img src="" alt="">
-                        <div classs="funcionalidade-texto">
-                            <h3>Venda Direto</h3>
-                            <p>Elimine atravessadores e conecte-se com quem compra.</p>
-                        </div>
-                    </li>
-                    
-                    <li class="recurso-item">
-                        <img src="" alt="">
-                        <div classs="funcionalidade-texto">
-                            <h3>Gestão Completa</h3>
-                            <p>Acompanhe custos, lucros e saiba onde melhorar.</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <img src="/public/recursos-gestao-rural.jpg" alt="">
+                    <div class="gestao-image">
+                        <img src="/recursos-gestao-rural.jpg" alt="Gestão Rural">
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="recursos">
-            <div>
-                <h2>Recursos Poderosos, Uso Simples</h2>
-                <p>Desenvolvido pensando nas necessidades reais de quem trabalha no campo</p>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Recursos Poderosos, Uso Simples</h2>
+                    <p class="section-subtitle">Desenvolvido pensando nas necessidades reais de quem trabalha no campo</p>
+                </div>
+                
+                <div class="recursos-grid">
+                    <div class="recurso-card">
+                        <div class="recurso-header">
+                            <div class="recurso-icon">
+                                <i class="bi bi-cloud-sun"></i>
+                            </div>
+                            <h3>Assistente Técnico 24/7</h3>
+                        </div>
+                        <p class="recurso-desc">Como ter um agrônomo no bolso: orientações para cada tipo de produção</p>
+                        <ul class="sub-features">
+                            <li>
+                                <i class="bi bi-calendar-check"></i>
+                                <span>Calendários sazonais e janelas de plantio/colheita</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-cloud-lightning"></i>
+                                <span>Alertas climáticos, pragas e eventos adversos</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-play-circle"></i>
+                                <span>Notificações em linguagem simples, ícones e vídeos</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="recurso-card">
+                        <div class="recurso-header">
+                            <div class="recurso-icon">
+                                <i class="bi bi-shop"></i>
+                            </div>
+                            <h3>Venda Sem Intermediários</h3>
+                        </div>
+                        <p class="recurso-desc">Marketplace que conecta você diretamente com quem quer comprar</p>
+                        <ul class="sub-features">
+                            <li>
+                                <i class="bi bi-megaphone"></i>
+                                <span>Publicação de ofertas para restaurantes, mercados e consumidores</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-building"></i>
+                                <span>Integração com compras públicas (PAA e PNAE)</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-people"></i>
+                                <span>Vendas coletivas e logística compartilhada</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="recurso-card">
+                        <div class="recurso-header">
+                            <div class="recurso-icon">
+                                <i class="bi bi-calculator"></i>
+                            </div>
+                            <h3>Controle Financeiro</h3>
+                        </div>
+                        <p class="recurso-desc">Saiba exatamente quanto gasta, quanto lucra e onde pode melhorar</p>
+                        <ul class="sub-features">
+                            <li>
+                                <i class="bi bi-journal-text"></i>
+                                <span>Registro de produção, perdas, custos e preços</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-graph-up"></i>
+                                <span>Relatórios de produtividade e lucratividade</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-lightbulb"></i>
+                                <span>Recomendações personalizadas baseadas em dados</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="recurso-card">
+                        <div class="recurso-header">
+                            <div class="recurso-icon">
+                                <i class="bi bi-chat-dots"></i>
+                            </div>
+                            <h3>Rede de Apoio</h3>
+                        </div>
+                        <p class="recurso-desc">Conecte-se com outros produtores e especialistas para trocar experiências</p>
+                        <ul class="sub-features">
+                            <li>
+                                <i class="bi bi-chat-square-text"></i>
+                                <span>Fórum para compartilhar experiências</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-person-badge"></i>
+                                <span>Acesso a técnicos, veterinários e extensionistas</span>
+                            </li>
+                            <li>
+                                <i class="bi bi-star"></i>
+                                <span>Difusão de inovações de baixo custo</span>
+                            </li>
+                        </ul>
+                    </div>     
+                </div>
             </div>
-            
-            <ul>
-                <li class="recurso-card">
-                    <h3>
-                        <img src="" alt="">
-                        Assistente Técnico 24/7
-                    </h3>
-                    <p>Como ter um agrônomo no bolso: orientações para cada tipo de produção</p>
-                    <ul class="sub-features">
-                        <li>
-                            <img src="" alt="">
-                            Calendários sazonais e janelas de plantio/colheita
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                            Alertas climáticos, pragas e eventos adversos
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                            Notificações em linguagem simples, ícones e vídeos
-                        </li>
-                    </ul>
-                </li>
-                
-                <li class="recurso-card">
-                    <h3>
-                        <img src="" alt="">
-                        Venda Sem Intermediários
-                    </h3>
-                    <p>Marketplace que conecta você diretamente com quem quer comprar</p>
-                    <ul class="sub-features">
-                        <li>
-                            <img src="" alt="">
-                            Publicação de ofertas para restaurantes, mercados e consumidores
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                            Integração com compras públicas (PAA e PNAE)
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                            Vendas coletivas e logística compartilhada
-                        </li>
-                    </ul>
-                </li>
-                
-                <li class="recurso-card">
-                    <h3>
-                        <img src="" alt="">
-                        Controle Financeiro
-                    </h3>
-                    <p>Saiba exatamente quanto gasta, quanto lucra e onde pode melhorar</p>
-                    <ul class="sub-features">
-                        <li>
-                            <img src="" alt="">
-                            Registro de produção, perdas, custos e preços
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                            Relatórios de produtividade e lucratividade
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                            Recomendações personalizadas baseadas em dados
-                        </li>
-                    </ul>
-                </li>
-                
-                <li class="recurso-card">
-                    <h3>
-                        <img src="" alt="">
-                        Rede de Apoio
-                    </h3>
-                    <p>Conecte-se com outros produtores e especialistas para trocar experiências</p>
-                    <ul class="sub-features">
-                        <li>
-                            <img src="" alt="">
-                            Fórum para compartilhar experiências
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                            Acesso a técnicos, veterinários e extensionistas
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                            Difusão de inovações de baixo custo
-                        </li>
-                    </ul>
-                </li>     
-            </ul> 
         </section>
 
         <section class="recursos-adicionais">
-            <div>
-                <h2>Recursos Adicionais</h2>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Recursos Adicionais</h2>
+                </div>
+                
+                <div class="adicionais-grid">
+                    <div class="adicional-card">
+                        <div class="adicional-icon">
+                            <i class="bi bi-geo"></i>
+                        </div>
+                        <h3>Acesso à Terra</h3>
+                        <p>Trilhas para regularização de posse e uso tradicional da terra.</p>
+                    </div>
+                    
+                    <div class="adicional-card">
+                        <div class="adicional-icon">
+                            <i class="bi bi-piggy-bank"></i>
+                        </div>
+                        <h3>Serviços Financeiros</h3>
+                        <p>Integração com microcrédito e simuladores de financiamento.</p>
+                    </div>
+                    
+                    <div class="adicional-card">
+                        <div class="adicional-icon">
+                            <i class="bi bi-box-seam"></i>
+                        </div>
+                        <h3>Agregação de Valor</h3>
+                        <p>Roteiros para processamento e comercialização de produtos beneficiados.</p>
+                    </div>
+                </div>
             </div>
-            
-            <ul>
-                <li class="recurso-card">
-                    <img src="" alt="">
-                    <h3>Acesso à Terra</h3>
-                    <p>Trilhas para regularização de posse e uso tradicional da terra.</p>
-                </li>
-                
-                <li class="recurso-card">
-                    <img src="" alt="">
-                    <h3>Serviços Financeiros</h3>
-                    <p>Integração com microcrédito e simuladores de financiamento.</p>
-                </li>
-                
-                <li class="recurso-card">
-                    <img src="" alt="">
-                    <h3>Agregação de Valor</h3>
-                    <p>Roteiros para processamento e comercialização de produtos beneficiados.</p>
-                </li>
-                
-            </ul> </section>
+        </section>
 
 
         <section class="resultados-esperados">
-            <div>
-                <h2>Resultados Esperados</h2>
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Resultados Esperados</h2>
+                </div>
+                
+                <div class="resultados-grid">
+                    <div class="resultado-card">
+                        <div class="resultado-icon">
+                            <i class="bi bi-arrow-up-circle"></i>
+                        </div>
+                        <h3>Maior Produtividade</h3>
+                        <p>Aumento da produção por hectare e por trabalhador.</p>
+                    </div>
+                    
+                    <div class="resultado-card">
+                        <div class="resultado-icon">
+                            <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <h3>Mais Renda</h3>
+                        <p>Redução de perdas e melhor preço na comercialização.</p>
+                    </div>
+                    
+                    <div class="resultado-card">
+                        <div class="resultado-icon">
+                            <i class="bi bi-arrow-left-right"></i>
+                        </div>
+                        <h3>Menos Intermediários</h3>
+                        <p>Acesso direto a mercados e compradores.</p>
+                    </div>
+                    
+                    <div class="resultado-card">
+                        <div class="resultado-icon">
+                            <i class="bi bi-tree"></i>
+                        </div>
+                        <h3>Sustentabilidade</h3>
+                        <p>Práticas agrícolas mais sustentáveis e resilientes.</p>
+                    </div>
+                </div>
             </div>
-            <ul>
-                <li class="resultado-card">
-                    <img src="" alt="" class="">
-                    <h3>Maior Produtividade</h3>
-                    <p>Aumento da produção por hectare e por trabalhador.</p>
-                </li>
-                
-                <li class="resultado-card">
-                    <img src="" alt="" class="">
-                    <h3>Mais Renda</h3>
-                    <p>Redução de perdas e melhor preço na comercialização.</p>
-                </li>
-                
-                <li class="resultado-card">
-                    <img src="" alt="" class="">
-                    <h3>Menos Intermediários</h3>
-                    <p>Acesso direto a mercados e compradores.</p>
-                </li>
-                
-                <li class="resultado-card">
-                    <img src="" alt="" class="">
-                    <h3>Sustentabilidade</h3>
-                    <p>Práticas agrícolas mais sustentáveis e resilientes.</p>
-                </li>
-            </ul> 
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">Pronto para Começar?</h2>
+                <p class="cta-subtitle">
+                    Aproveite todos esses recursos e transforme sua produção hoje mesmo
+                </p>
+                <div class="button-group">
+                    <a href="./contato.html" class="btn btn-light">Criar Conta Grátis</a>
+                    <a href="./contato.html" class="btn btn-outline">Falar com Especialista</a>
+                </div>
+            </div>
         </section>
     </main>
+
+    <footer class="footer" role="contentinfo">
+      <div class="footer-container">
+        <section class="footer-section" aria-labelledby="footer-about">
+          <div class="footer-logo">
+            <img src="../../noBgWhite.png" alt="Logo Colheita Certa" class="footer-logo-image" />
+            <span>Colheita Certa</span>
+          </div>
+          <p class="footer-description">
+            A plataforma completa que ajuda pequenos produtores a aumentar sua renda e reduzir perdas através da tecnologia.
+          </p>
+        </section>
+        
+        <nav class="footer-section" aria-labelledby="footer-links">
+          <h3 id="footer-links">Links Rápidos</h3>
+          <ul class="footer-links">
+            <li><a href="../../index.html" class="footer-link">Início</a></li>
+            <li><a href="./solucoes.html" class="footer-link">Soluções</a></li>
+            <li><a href="./recursos.html" class="footer-link">Recursos</a></li>
+            <li><a href="./contato.html" class="footer-link">Contato</a></li>
+          </ul>
+        </nav>
+        
+        <section class="footer-section" aria-labelledby="footer-info">
+          <h3 id="footer-info">Sobre</h3>
+          <p class="footer-info-text">Desenvolvido pela equipe RAP como parte do projeto Agrotech.</p>
+          <p class="footer-info-text">Alinhado aos objetivos de desenvolvimento sustentável da ONU.</p>
+        </section>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Colheita Certa. Tecnologia para transformar a agricultura familiar</p>
+      </div>
+    </footer>
 </body>
 </html>
