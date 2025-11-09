@@ -1,19 +1,12 @@
-# Colheita Certa - Plataforma Agrotech
-
-## 📋 Sobre o Projeto
+## Sobre o Projeto
 
 Este projeto foi desenvolvido como parte da **Fase 3** do curso da FIAP, dentro do contexto do projeto **Agrotech**. O Colheita Certa é uma plataforma web voltada para agricultura familiar, conectando pequenos produtores rurais a mercados e oferecendo assistência técnica digital.
 
-## 🎥 Pitch Vídeo
+## Pitch Vídeo
 
 [![Pitch no YouTube](https://img.youtube.com/vi/6k_7xrSarrU/hqdefault.jpg)](https://youtu.be/6k_7xrSarrU?si=jSfSUzuU29lph4d1)
 
-## 🚀 Como Executar o Projeto
-
-### Pré-requisitos
-
-- **Node.js** (versão 20 ou superior)
-- **pnpm** (gerenciador de pacotes)
+## Como Executar o Projeto
 
 Se você estiver usando **Nix**, pode usar o ambiente de desenvolvimento configurado:
 
