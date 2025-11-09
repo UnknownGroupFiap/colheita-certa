@@ -381,6 +381,7 @@
   font-size: 1.875rem;
   margin-bottom: 1rem;
   font-weight: 700;
+  color: var(--color-white);
 }
 
 @media (min-width: 768px) {

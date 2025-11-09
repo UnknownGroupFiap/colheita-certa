@@ -58,8 +58,8 @@
             <div class="container">
                 <div class="contact-grid">
                     <div class="contact-info">
-                        <h2 class="section-title">Informações de Contato</h2>
-                        <p class="contact-intro">Nossa equipe está pronta para ajudar você. Entre em contato através dos canais abaixo ou preencha o formulário ao lado.</p>
+c                        <h2 class="section-title">Fale com a gente</h2>
+                        <p class="contact-intro">Tire suas dúvidas ou envie sugestões pelos canais abaixo</p>
 
                         <div class="info-cards">
                             <div class="info-card">
@@ -109,7 +109,7 @@
                     </div>
 
                     <div class="contact-form-wrapper">
-                        <h2 class="section-title">Envie sua Mensagem</h2>
+                        <h2 class="section-title">Envie uma mensagem</h2>
                         <form class="contact-form" id="contactForm">
                             <div class="form-group">
                                 <label for="name">Nome Completo *</label>
@@ -138,10 +138,10 @@
                                 </select>
                             </div>
 
-                            <div class="form-group">
-                                <label for="message">Mensagem *</label>
-                                <textarea id="message" name="message" rows="5" required placeholder="Escreva sua mensagem aqui..."></textarea>
-                            </div>
+                                                    <div class="form-group">
+                            <label for="message">Mensagem *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Conte mais sobre sua dúvida ou sugestão"></textarea>
+                        </div>
 
                             <button type="submit" class="btn btn-primary btn-submit">
                                 <i class="bi bi-send"></i>
@@ -161,8 +161,8 @@
         <section class="faq-section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Perguntas Frequentes</h2>
-                    <p class="section-subtitle">Encontre respostas rápidas para as dúvidas mais comuns</p>
+                    <h2 class="section-title">Dúvidas frequentes</h2>
+                    <p class="section-subtitle">Perguntas que recebemos com mais frequência</p>
                 </div>
 
                 <div class="faq-grid">
@@ -232,22 +232,6 @@
       </div>
     </footer>
 
-    <script>
-      // Formulário de contato - simulação de envio
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const successMessage = document.getElementById('successMessage');
-        successMessage.style.display = 'flex';
-        
-        // Reset form
-        setTimeout(() => {
-          this.reset();
-          setTimeout(() => {
-            successMessage.style.display = 'none';
-          }, 3000);
-        }, 100);
-      });
-    </script>
+    <script src="../scripts/contato.js"></script>
 </body>
 </html>
