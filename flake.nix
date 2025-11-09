@@ -34,7 +34,7 @@
             
             make-zip() {
               echo "Gerando ZIP do projeto..."
-              zip -r colheita-certa.zip index.html src/ public/ -x "*.git*" "node_modules/*" "dist/*"
+              zip -r colheita-certa.zip index.html src/ public/ entrega.txt
               echo "ZIP gerado: colheita-certa.zip"
             }
             
