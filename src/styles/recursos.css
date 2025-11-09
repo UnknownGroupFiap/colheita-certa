@@ -296,12 +296,12 @@
 
 .resultados-esperados {
   padding: 5rem 0;
-  background: linear-gradient(135deg, var(--color-green-600), var(--color-green-700));
-  color: var(--color-white);
+  background: var(--color-gray-100);
+  color: var(--color-gray-900);
 }
 
 .resultados-esperados .section-title {
-  color: var(--color-white);
+  color: var(--color-gray-900);
 }
 
 .resultados-grid {
@@ -325,7 +325,7 @@
 .resultado-card {
   text-align: center;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(158, 142, 142, 0.1);
   backdrop-filter: blur(8px);
   border-radius: 0.75rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -345,13 +345,12 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto 1.5rem;
-  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(8px);
 }
 
 .resultado-icon i {
   font-size: 2rem;
-  color: var(--color-white);
+  color: var(--color-green-800);
 }
 
 .resultado-card h3 {
@@ -361,7 +360,7 @@
 }
 
 .resultado-card p {
-  color: rgb(220, 252, 231);
+  color: var(--color-gray-600);
   line-height: 1.6;
   font-size: 0.9375rem;
 }
