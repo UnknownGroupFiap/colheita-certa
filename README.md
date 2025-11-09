@@ -4,7 +4,7 @@ Este projeto foi desenvolvido como parte da **Fase 3** do curso da FIAP, dentro 
 
 ## Pitch Vídeo
 
-[![Pitch no YouTube](https://img.youtube.com/vi/6k_7xrSarrU/hqdefault.jpg)](https://youtu.be/6k_7xrSarrU?si=jSfSUzuU29lph4d1)
+[![Pitch no YouTube](https://img.youtube.com/vi/vBOtlaTRjO0/hqdefault.jpg)](https://www.youtube.com/watch?v=vBOtlaTRjO0)
 
 ## Como Executar o Projeto
 
