@@ -6,6 +6,7 @@ import CardsValor from './components/CardsValor';
 import EstatisticasImpacto from './components/EstatisticasImpacto';
 import MercadoDigital from './components/MercadoDigital';
 import AssistenciaTecnica from './components/AssistenciaTecnica';
+import DiagnosticoRapido from './components/DiagnosticoRapido';
 import CtaInicio from './components/CtaInicio';
 import '../../styles/main.css';
 
@@ -22,6 +23,7 @@ function Inicio() {
         <EstatisticasImpacto />
         <MercadoDigital />
         <AssistenciaTecnica />
+        <DiagnosticoRapido />
         <CtaInicio />
       </main>
 
