@@ -253,16 +253,16 @@
 
 .stats-section {
   padding: 4rem 0;
-  background: linear-gradient(135deg, var(--color-green-600), var(--color-green-700));
-  color: var(--color-white);
+  background: #f9fafb;
+  color: var(--color-gray-900);
 }
 
 .stats-section .section-title {
-  color: var(--color-white);
+  color: var(--color-gray-900);
 }
 
 .stats-section .section-subtitle {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-gray-600);
 }
 
 .stats-grid {
@@ -291,6 +291,7 @@
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   font-weight: 700;
+  color: var(--color-green-600);
 }
 
 @media (min-width: 768px) {
@@ -300,7 +301,8 @@
 }
 
 .stat-text {
-  color: rgb(220, 252, 231);
+  color: var(--color-gray-700);
+  font-weight: 500;
 }
 
 .feature-section {

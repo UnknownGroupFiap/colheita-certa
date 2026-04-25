@@ -1,9 +1,12 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
+import { useAuth } from '../contexts/AuthContext';
 
 function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
   const checkboxRef = useRef(null);
+  const { isAuthenticated, user, logout } = useAuth();
 
   const navLinks = [
     { to: '/', label: 'Início' },
@@ -16,6 +19,11 @@ function Header() {
     if (checkboxRef.current) {
       checkboxRef.current.checked = false;
     }
+  };
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
   };
 
   return (
@@ -50,6 +58,43 @@ function Header() {
                 </li>
               );
             })}
+
+            {/* Botões de autenticação */}
+            <li role="none" className="nav-auth-buttons">
+              {isAuthenticated ? (
+                <div className="auth-menu">
+                  <Link
+                    to="/dashboard"
+                    className="nav-link dashboard-link"
+                    onClick={handleLinkClick}
+                  >
+                    <i className="bi bi-speedometer2"></i>
+                    Dashboard
+                  </Link>
+                  <button className="logout-button" onClick={handleLogout}>
+                    <i className="bi bi-box-arrow-right"></i>
+                    Sair
+                  </button>
+                </div>
+              ) : (
+                <div className="auth-buttons">
+                  <Link
+                    to="/login"
+                    className="nav-link login-link"
+                    onClick={handleLinkClick}
+                  >
+                    Entrar
+                  </Link>
+                  <Link
+                    to="/registro"
+                    className="nav-link register-link"
+                    onClick={handleLinkClick}
+                  >
+                    Criar Conta
+                  </Link>
+                </div>
+              )}
+            </li>
           </ul>
         </div>
       </nav>
