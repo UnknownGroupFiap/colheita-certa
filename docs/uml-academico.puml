@@ -1,0 +1,354 @@
+@startuml sistema_colheita_certa
+title Sistema Colheita Certa - Diagrama de Classes UML com Cardinalidades
+
+skinparam classAttributeIconSize 0
+skinparam classFontSize 12
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam class {
+    BackgroundColor<<Entity>> #FFF9C4
+    BackgroundColor<<Service>> #E8EAF6
+    BackgroundColor<<Controller>> #E8F5E9
+    BackgroundColor<<View>> #FFE0B2
+    BackgroundColor<<Interface>> #FCE4EC
+    BackgroundColor<<Abstract>> #F3E5F5
+    BorderColor Black
+    ArrowColor Black
+}
+
+class LoginView <<View>> {
+    - formData: Map
+    - error: String
+    - loading: Boolean
+    + render(): void
+    + handleSubmit(): void
+    + validateForm(): Boolean
+}
+
+class RegistroView <<View>> {
+    - step: Integer
+    - formData: Map
+    - errors: List<String>
+    + nextStep(): void
+    + previousStep(): void
+    + handleSubmit(): void
+}
+
+class DashboardView <<View>> {
+    - currentUser: Usuario
+    - diagnosticos: List<Diagnostico>
+    + loadData(): void
+    + refresh(): void
+}
+
+interface IAuthService <<Interface>> {
+    + login(email: String, password: String): Usuario
+    + logout(): void
+    + isAuthenticated(): Boolean
+}
+
+interface IValidator <<Interface>> {
+    + validate(value: String): Boolean
+    + getErrorMessage(): String
+}
+
+interface IRepository <<Interface>> {
+    + save(entity: Object): void
+    + findById(id: String): Object
+    + findAll(): List
+    + delete(id: String): void
+}
+
+abstract class Pessoa <<Abstract>> {
+    # id: String
+    # nome: String
+    # email: String
+    # telefone: String
+    # dataCadastro: Date
+    + getNome(): String
+    + setNome(nome: String): void
+    {abstract} + validar(): Boolean
+}
+
+abstract class Validator <<Abstract>> {
+    # errorMessage: String
+    + validate(value: String): Boolean
+    {abstract} # performValidation(value: String): Boolean
+}
+
+class Usuario <<Entity>> {
+    - senha: String
+    - tipoProducao: String
+    - tamanhoPropriedade: String
+    - cidade: String
+    - estado: String
+    - objetivoPrincipal: String
+    - experiencia: String
+    - usaTecnologia: Boolean
+    - diagnosticos: List<Diagnostico>
+    + getSenha(): String
+    + setSenha(senha: String): void
+    + addDiagnostico(diag: Diagnostico): void
+    + getDiagnosticos(): List<Diagnostico>
+    + validar(): Boolean
+}
+
+class Diagnostico <<Entity>> {
+    - id: String
+    - usuario: Usuario
+    - tipoProducao: String
+    - tamanhoPropriedade: String
+    - usaTecnologia: Boolean
+    - objetivoPrincipal: String
+    - desafios: List<String>
+    - data: Date
+    - score: Double
+    - recomendacoes: List<Recomendacao>
+    + calcularScore(): Double
+    + gerarRecomendacoes(): void
+}
+
+class Propriedade <<Entity>> {
+    - id: String
+    - nome: String
+    - tamanho: Double
+    - localizacao: String
+    - usuario: Usuario
+    - culturas: List<Cultura>
+    + addCultura(cultura: Cultura): void
+    + getAreaTotal(): Double
+}
+
+class Cultura <<Entity>> {
+    - id: String
+    - nome: String
+    - tipo: String
+    - cicloEmDias: Integer
+    - dataPlantio: Date
+    - propriedade: Propriedade
+    + getTempoRestante(): Integer
+    + isReadyForHarvest(): Boolean
+}
+
+class Recomendacao <<Entity>> {
+    - id: String
+    - descricao: String
+    - prioridade: String
+    - diagnostico: Diagnostico
+    + getPrioridade(): String
+}
+
+class AuthService <<Service>> {
+    - {static} instance: AuthService
+    - currentUser: Usuario
+    - repository: UsuarioRepository
+    + {static} getInstance(): AuthService
+    + login(email: String, password: String): Usuario
+    + register(userData: Map): Usuario
+    + logout(): void
+    + isAuthenticated(): Boolean
+    + getCurrentUser(): Usuario
+}
+
+class DiagnosticoService <<Service>> {
+    - repository: DiagnosticoRepository
+    + criar(data: Map): Diagnostico
+    + buscarPorUsuario(userId: String): List<Diagnostico>
+    + analisar(diagnostico: Diagnostico): Map
+    + gerarRelatorio(diagnostico: Diagnostico): String
+}
+
+class LocalStorageService <<Service>> {
+    - {static} instance: LocalStorageService
+    + {static} getInstance(): LocalStorageService
+    + setItem(key: String, value: Object): void
+    + getItem(key: String): Object
+    + removeItem(key: String): void
+}
+
+class UsuarioRepository <<Service>> {
+    - storage: LocalStorageService
+    + save(usuario: Usuario): void
+    + findById(id: String): Usuario
+    + findByEmail(email: String): Usuario
+    + findAll(): List<Usuario>
+    + delete(id: String): void
+}
+
+class DiagnosticoRepository <<Service>> {
+    - storage: LocalStorageService
+    + save(diagnostico: Diagnostico): void
+    + findById(id: String): Diagnostico
+    + findByUsuario(usuarioId: String): List<Diagnostico>
+    + findAll(): List<Diagnostico>
+}
+
+class EmailValidator <<Service>> {
+    - emailRegex: String
+    # performValidation(value: String): Boolean
+}
+
+class PasswordValidator <<Service>> {
+    - minLength: Integer = 6
+    # performValidation(value: String): Boolean
+}
+
+class AuthController <<Controller>> {
+    - authService: AuthService
+    - validators: List<IValidator>
+    + handleLogin(request: Request): Response
+    + handleRegister(request: Request): Response
+    + handleLogout(request: Request): Response
+}
+
+class DiagnosticoController <<Controller>> {
+    - diagnosticoService: DiagnosticoService
+    - authService: AuthService
+    + create(request: Request): Response
+    + list(request: Request): Response
+    + getById(id: String): Response
+}
+
+Pessoa <|-- Usuario : estende
+Validator <|-- EmailValidator : estende
+Validator <|-- PasswordValidator : estende
+
+AuthService ..|> IAuthService : implementa
+EmailValidator ..|> IValidator : implementa
+PasswordValidator ..|> IValidator : implementa
+UsuarioRepository ..|> IRepository : implementa
+DiagnosticoRepository ..|> IRepository : implementa
+
+Usuario "1" *-- "0..*" Diagnostico : possui
+Diagnostico "1" *-- "1..*" Recomendacao : contém
+Propriedade "1" *-- "1..*" Cultura : contém
+
+Usuario "1" o-- "0..*" Propriedade : gerencia
+
+Usuario "1" -- "0..*" Propriedade : possui/pertence
+Diagnostico "0..*" -- "1" Usuario : pertence/tem
+Cultura "0..*" -- "1" Propriedade : cultivada em/cultiva
+
+AuthController "1" --> "1" AuthService : usa
+DiagnosticoController "1" --> "1" DiagnosticoService : usa
+DiagnosticoController "1" --> "1" AuthService : autentica com
+
+LoginView "1" ..> "1" AuthController : envia dados
+RegistroView "1" ..> "1" AuthController : envia dados
+DashboardView "1" ..> "1" DiagnosticoController : solicita dados
+AuthService "1" ..> "1" UsuarioRepository : persiste
+DiagnosticoService "1" ..> "1" DiagnosticoRepository : persiste
+AuthService "1" ..> "0..*" EmailValidator : valida
+AuthService "1" ..> "0..*" PasswordValidator : valida
+
+UsuarioRepository "1" --> "1" LocalStorageService : armazena em
+DiagnosticoRepository "1" --> "1" LocalStorageService : armazena em
+
+note right of Usuario
+  **Entidade Principal**
+  Herda de Pessoa (classe abstrata)
+  Relacionamento 1:N com Diagnósticos
+  Relacionamento 1:N com Propriedades
+
+  **Princípio de Herança**
+  Reutiliza atributos e métodos
+  da classe Pessoa
+end note
+
+note left of AuthService
+  **Padrão Singleton**
+  Garante única instância global
+  do serviço de autenticação
+
+  Método getInstance() retorna
+  sempre a mesma instância
+
+  Usado para manter estado
+  consistente da autenticação
+end note
+
+note top of Validator
+  **Padrão Template Method**
+  Classe abstrata define estrutura
+  do algoritmo de validação
+
+  Subclasses implementam
+  performValidation() específico
+
+  Permite reutilização de código
+  e extensibilidade
+end note
+
+note bottom of IRepository
+  **Padrão Repository**
+  Interface define contrato para
+  persistência de dados
+
+  Abstrai acesso aos dados
+  Permite trocar implementação
+  sem afetar camadas superiores
+
+  **Padrão Strategy**
+  Diferentes estratégias de
+  armazenamento podem ser usadas
+end note
+
+note right of DiagnosticoController
+  **Padrão MVC**
+  Controller separa lógica de
+  apresentação (View) da lógica
+  de negócio (Service)
+
+  Recebe requisições da View
+  Processa através dos Services
+  Retorna resposta formatada
+end note
+
+note left of LocalStorageService
+  **Padrão Facade**
+  Simplifica interface complexa
+  do localStorage do navegador
+
+  **Padrão Singleton**
+  Única instância para gerenciar
+  armazenamento local
+end note
+
+note bottom of Pessoa
+  **Classe Abstrata**
+  Define estrutura base para
+  entidades que são pessoas
+
+  Método abstrato validar()
+  deve ser implementado
+  pelas subclasses
+
+  **Princípio DRY**
+  Evita duplicação de código
+end note
+
+legend bottom left
+  |= Cor |= Tipo de Classe |= Descrição |
+  |<#FFF9C4> | **Entity** | Entidades do domínio (dados persistentes) |
+  |<#E8EAF6> | **Service** | Serviços de lógica de negócio |
+  |<#E8F5E9> | **Controller** | Controladores (processamento de requisições) |
+  |<#FFE0B2> | **View** | Camada de apresentação (interface) |
+  |<#FCE4EC> | **Interface** | Contratos e abstrações |
+  |<#F3E5F5> | **Abstract** | Classes abstratas base |
+
+  **Notações de Relacionamento:**
+  --|> Herança (extends/estende)
+  ..|> Implementação (implements/implementa)
+  *-- Composição (parte forte)
+  o-- Agregação (parte fraca)
+  --> Associação direcionada
+  ..> Dependência (usa temporariamente)
+
+  **Cardinalidades:**
+  1 - Exatamente um
+  0..1 - Zero ou um (opcional)
+  0..* - Zero ou muitos
+  1..* - Um ou muitos
+endlegend
+
+@enduml

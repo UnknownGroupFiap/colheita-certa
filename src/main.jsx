@@ -1,11 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import App from './App';
-import ScrollToTop from './components/ScrollToTop';
-import './utils/initializeDemo'; // Inicializa usuário demo
-import './styles/reset.css';
-import './styles/common.css';
+import App from '@/App';
+import { ScrollToTop } from '@components';
+import '@styles/app.css';
+
+(() => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme && savedTheme !== 'system') {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
+})();
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

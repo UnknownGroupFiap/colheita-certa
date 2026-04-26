@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useRef } from 'react';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '@contexts/AuthContext';
 
 function Header() {
   const location = useLocation();
@@ -59,7 +59,6 @@ function Header() {
               );
             })}
 
-            {/* Botões de autenticação */}
             <li role="none" className="nav-auth-buttons">
               {isAuthenticated ? (
                 <div className="auth-menu">

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { useAuth } from '../../contexts/AuthContext';
-import Header from '../../components/Header';
-import '../../styles/auth.css';
+import { useAuth } from '@contexts/AuthContext';
+import { AuthLayout, Section, Button, Input, Card, Alert, Badge } from '@components';
+import { AUTH, ICONS, ROUTES, MESSAGES } from '@utils/constants';
 
 function Login() {
   const navigate = useNavigate();
@@ -28,18 +28,16 @@ function Login() {
     setLoading(true);
     setError('');
 
-    // Validações
     if (!formData.email || !formData.senha) {
-      setError('Preencha todos os campos');
+      setError(MESSAGES.FILL_ALL_FIELDS);
       setLoading(false);
       return;
     }
 
-    // Tentar fazer login
-    const result = login(formData.email, formData.senha);
+    const result = await login(formData.email, formData.senha);
 
     if (result.success) {
-      navigate('/dashboard');
+      navigate(ROUTES.EM_DESENVOLVIMENTO);
     } else {
       setError(result.error);
     }
@@ -49,141 +47,99 @@ function Login() {
 
   const fillDemoData = () => {
     setFormData({
-      email: 'demo@colheitacerta.com',
-      senha: 'demo123'
+      email: AUTH.DEMO_EMAIL,
+      senha: AUTH.DEMO_PASSWORD
     });
     setError('');
   };
 
   return (
-    <>
-      <Header />
-      <main className="auth-main">
-        <div className="container">
-        <div className="auth-container">
-          <div className="auth-card">
-            <div className="auth-header">
-              <h1>Bem-vindo de volta!</h1>
-              <p>Entre na sua conta para acessar o painel</p>
-            </div>
-
+    <AuthLayout>
+      <Section centered className="animate-fade-in">
+        <div style={{ maxWidth: '500px', margin: '0 auto' }}>
+          <Card
+            title="Bem-vindo de volta!"
+            subtitle="Entre na sua conta para acessar o painel"
+            className="animate-slide-up"
+          >
             {error && (
-              <div className="alert alert-error">
-                <i className="bi bi-exclamation-circle"></i>
+              <Alert type="error" dismissible onDismiss={() => setError('')}>
                 {error}
-              </div>
+              </Alert>
             )}
 
-            <form className="auth-form" onSubmit={handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="seu@email.com"
-                  className="form-input"
-                  required
-                />
-              </div>
+            <form onSubmit={handleSubmit}>
+              <Input
+                label="Email"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="seu@email.com"
+                icon={ICONS.FORM.EMAIL}
+                required
+              />
 
-              <div className="form-group">
-                <label htmlFor="senha">Senha</label>
-                <input
-                  type="password"
-                  id="senha"
-                  name="senha"
-                  value={formData.senha}
-                  onChange={handleChange}
-                  placeholder="Digite sua senha"
-                  className="form-input"
-                  required
-                />
-              </div>
+              <Input
+                label="Senha"
+                type="password"
+                name="senha"
+                value={formData.senha}
+                onChange={handleChange}
+                placeholder="Digite sua senha"
+                icon={ICONS.FORM.PASSWORD}
+                required
+              />
 
-              <button
+              <Button
                 type="submit"
-                className="btn-submit"
-                disabled={loading}
+                variant="primary"
+                fullWidth
+                loading={loading}
+                icon={ICONS.ACTION.LOGIN}
               >
-                {loading ? (
-                  <>
-                    <span className="spinner"></span>
-                    Entrando...
-                  </>
-                ) : (
-                  'Entrar'
-                )}
-              </button>
+                {loading ? MESSAGES.LOADING : 'Entrar'}
+              </Button>
             </form>
 
-            <div className="auth-divider">
-              <span>ou</span>
+            <div className="text-center" style={{ margin: '1.5rem 0' }}>
+              <span style={{ color: 'var(--color-text-secondary)' }}>ou</span>
             </div>
 
-            <div className="demo-credentials">
+            <Card variant="info" className="text-center">
               <h3>Conta de Demonstração</h3>
-              <div className="demo-info">
-                <div className="credential">
-                  <span className="label">Email:</span>
-                  <code>demo@colheitacerta.com</code>
+              <div style={{ marginTop: '1rem' }}>
+                <div style={{ marginBottom: '0.5rem' }}>
+                  <Badge variant="secondary">Email</Badge>
+                  <code style={{ marginLeft: '0.5rem' }}>{AUTH.DEMO_EMAIL}</code>
                 </div>
-                <div className="credential">
-                  <span className="label">Senha:</span>
-                  <code>demo123</code>
+                <div style={{ marginBottom: '1rem' }}>
+                  <Badge variant="secondary">Senha</Badge>
+                  <code style={{ marginLeft: '0.5rem' }}>{AUTH.DEMO_PASSWORD}</code>
                 </div>
               </div>
-              <button
-                type="button"
-                className="btn-demo"
+              <Button
+                variant="ghost"
                 onClick={fillDemoData}
+                icon={ICONS.ACTION.DEMO}
+                size="small"
               >
-                <i className="bi bi-lightning"></i>
                 Preencher com dados demo
-              </button>
-            </div>
+              </Button>
+            </Card>
 
-            <div className="auth-footer">
+            <div className="text-center" style={{ marginTop: '1.5rem' }}>
               <p>
                 Ainda não tem uma conta?{' '}
-                <Link to="/registro" className="link">
+                <Link to={ROUTES.REGISTER} className="link">
                   Criar conta grátis
                 </Link>
               </p>
             </div>
-          </div>
-
-          <div className="auth-benefits">
-            <h2>Por que usar o Colheita Certa?</h2>
-            <ul className="benefits-list">
-              <li>
-                <i className="bi bi-check-circle"></i>
-                <span>Acompanhe suas métricas de produção em tempo real</span>
-              </li>
-              <li>
-                <i className="bi bi-check-circle"></i>
-                <span>Gerencie clientes e vendas de forma organizada</span>
-              </li>
-              <li>
-                <i className="bi bi-check-circle"></i>
-                <span>Receba alertas climáticos para sua região</span>
-              </li>
-              <li>
-                <i className="bi bi-check-circle"></i>
-                <span>Acesse relatórios detalhados sobre sua propriedade</span>
-              </li>
-              <li>
-                <i className="bi bi-check-circle"></i>
-                <span>Conecte-se com outros produtores e compradores</span>
-              </li>
-            </ul>
-          </div>
+          </Card>
         </div>
-      </div>
-      </main>
-    </>
+      </Section>
+    </AuthLayout>
   );
 }
 
